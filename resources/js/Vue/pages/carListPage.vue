@@ -79,18 +79,13 @@
         .then((res) => {
            cars.value = res.data
         }).catch((err) => {
-            console.log(err);
-            
+                     
         })
 
     }
     
     onMounted(loadcars());
-    console.log(cars);
-
-    onMounted(() => {
-        console.log(cars);
-    });
+    
     const deletecar = async(index)=>{
         console.log(index)
         const response = await axios.delete('/api/car/'+cars.value[index].id)

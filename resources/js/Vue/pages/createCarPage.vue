@@ -78,10 +78,10 @@
         error.message = '';
         const response = await axios.post('/api/car/store',{car:car})
         .then((res) => {
-            console.log(res);
+            
             router.push({name:'carList'})
         }).catch((err) => {
-            console.log(err);
+            
             error.message = err.response.data.message;
         })
 

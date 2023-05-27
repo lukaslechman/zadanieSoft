@@ -69,7 +69,7 @@
             part.serial_number = res.data.serial_number
             
         }).catch((err) => {
-            console.log(err);
+          
             error.message = err.response.data.message;
         })
     })
@@ -83,7 +83,7 @@
             router.push({name:'partList'});
             
         }).catch((err) => {
-            console.log(err);
+            
             error.message =err.response.data.message ?  err.response.data.message : err.response.data
             
         })

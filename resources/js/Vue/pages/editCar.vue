@@ -68,14 +68,11 @@
     onMounted (()=>{
         axios.get('/api/car/'+id)
         .then((res) => {
-            console.log(res);
             car.name = res.data.name,
             car.id = res.data.id,
             car.registration_number = res.data.registration_number
             car.is_registered = res.data.is_registered == 0 ? false :true;
-            console.log(car)
         }).catch((err) => {
-            console.log(err);
             error.message = err.response.data.message;
         })
     })
@@ -83,11 +80,9 @@
 
     let valid = ()=>{
          
-        console.log(car.registration_number.length)
         if( car.registration_number.length > 0 && car.is_registered==false){
            return false ;
         }
-        
         else return true
     }
     const tryTostore = ()=>{
@@ -105,10 +100,8 @@
         error.message = '';
         const response = await axios.put('/api/car/'+car.id,{car:car})
         .then((res) => {
-            console.log(res);
             router.push({name:'carList'})
         }).catch((err) => {
-            console.log(err);
             error.message = err.response.data.message;
         })
     }

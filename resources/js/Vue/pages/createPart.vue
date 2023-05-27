@@ -64,7 +64,7 @@
             router.push({name:'partList'});
             
         }).catch((err) => {
-            console.log(err);
+            
             error.message =err.response.data.message ?  err.response.data.message : err.response.data
             
         })
