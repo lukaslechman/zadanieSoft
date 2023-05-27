@@ -83,9 +83,11 @@
 
     let valid = ()=>{
          
-        if((!car.registration_number || car.registration_number.length > 0) && car.is_registered==false){
+        console.log(car.registration_number.length)
+        if( car.registration_number.length > 0 && car.is_registered==false){
            return false ;
         }
+        
         else return true
     }
     const tryTostore = ()=>{
